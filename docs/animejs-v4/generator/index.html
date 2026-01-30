@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurzgesagt Animation Generator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/animejs@4.3.4/dist/bundles/anime.umd.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Kurzgesagt Animation Generator</h1>
+      <p class="subtitle">AI-powered educational animations with Anime.js v4</p>
+    </header>
+
+    <main class="main">
+      <section class="generator-panel">
+        <div class="input-group">
+          <label for="topic">Topic</label>
+          <input type="text" id="topic" placeholder="e.g., immune system, black holes, neural networks..." />
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <label for="duration">Duration (~seconds)</label>
+            <input type="range" id="duration" min="5" max="45" value="15" />
+            <span class="range-value" id="duration-value">~15s</span>
+          </div>
+
+          <div class="input-group">
+            <label for="sequences">Sequences</label>
+            <select id="sequences">
+              <option value="dynamic" selected>Dynamic</option>
+              <option value="3">3 sequences</option>
+              <option value="5">5 sequences</option>
+              <option value="7">7 sequences</option>
+              <option value="10">10 sequences</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="generate-btn" class="generate-btn">
+          <span class="btn-text">Generate Animation</span>
+          <span class="btn-loading" style="display: none;">Generating...</span>
+        </button>
+
+        <div id="status" class="status"></div>
+      </section>
+
+      <section class="preview-panel">
+        <div class="preview-header">
+          <h2>Preview</h2>
+          <div class="preview-controls">
+            <button id="play-btn" class="control-btn" disabled>Play</button>
+            <button id="restart-btn" class="control-btn" disabled>Restart</button>
+            <button id="save-btn" class="control-btn" disabled>Save to Vault</button>
+            <button id="code-btn" class="control-btn" disabled>View Code</button>
+          </div>
+        </div>
+        <div id="stage" class="stage">
+          <div class="stage-placeholder">
+            <p>Your animation will appear here</p>
+          </div>
+        </div>
+        <div id="narration" class="narration"></div>
+      </section>
+
+      <section class="vault-panel">
+        <div class="vault-header">
+          <h2>Vault</h2>
+          <span id="vault-count" class="vault-count">0 animations</span>
+        </div>
+        <div id="vault-list" class="vault-list">
+          <p class="vault-empty">No saved animations yet</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Code Modal -->
+  <div id="code-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Generated Code</h3>
+        <button id="close-modal" class="close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h4>Setup</h4>
+        <pre id="code-setup" class="code-block"></pre>
+        <h4>Animation</h4>
+        <pre id="code-animation" class="code-block"></pre>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
