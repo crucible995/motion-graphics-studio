@@ -1,0 +1,33 @@
+{
+  "name": "motion-graphics-studio",
+  "version": "1.0.0",
+  "description": "AI-powered motion graphics generator with Remotion and Anime.js",
+  "scripts": {
+    "studio": "remotion studio",
+    "render:all": "npm run render:t1 && npm run render:t2 && npm run render:t3 && npm run render:t4 && npm run render:t5 && npm run render:t6",
+    "render:t1": "remotion render FunctionConcept out/t1-function-5s.mp4",
+    "render:t2": "remotion render NeuronConcept out/t2-neuron-5s.mp4",
+    "render:t3": "remotion render DNAReplication out/t3-dna-10s.mp4",
+    "render:t4": "remotion render APIRequestFlow out/t4-api-10s.mp4",
+    "render:t5": "remotion render WaveInterference out/t5-waves-15s.mp4",
+    "render:t6": "remotion render GradientDescent out/t6-gradient-15s.mp4"
+  },
+  "keywords": ["remotion", "motion-graphics", "animation", "video"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@remotion/cli": "^4.0.414",
+    "@remotion/media-utils": "^4.0.414",
+    "@remotion/player": "^4.0.414",
+    "animejs": "^4.3.5",
+    "dotenv": "^17.2.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remotion": "^4.0.414"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.10",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
+  }
+}
